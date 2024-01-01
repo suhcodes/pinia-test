@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('AuthStore', {
   state() {
@@ -7,7 +7,7 @@ export const useAuthStore = defineStore('AuthStore', {
     }
   },
   getters: {
-    firstName: (state) => state.user.firstName,
+    firstName: (state) => state.user.firstName
     /*
       firstName() {
         return this.user.firstName;
@@ -19,7 +19,7 @@ export const useAuthStore = defineStore('AuthStore', {
       this.user = {
         firstName: 'Suely',
         lastName: 'Moraes',
-        email: 'contact@suh.codes',
+        email: 'contact@suh.codes'
       }
     }
   }

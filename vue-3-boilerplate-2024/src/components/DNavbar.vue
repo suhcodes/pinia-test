@@ -1,7 +1,9 @@
 <template>
   <nav class="flex m-4 justify-between">
     <div class="flex gap-2">
-      <RouterLink v-for="route in routes" :to="route.path" :key="route">{{ route.name }}</RouterLink>
+      <RouterLink v-for="route in routes" :key="route" :to="route.path">
+        {{ route.name }}
+      </RouterLink>
     </div>
     <div>{{ firstName }}</div>
   </nav>
@@ -15,10 +17,9 @@ const router = useRouter()
 const routes = ref(router.getRoutes())
 const authStore = useAuthStore()
 onBeforeMount(() => {
-	authStore.authUser()
+  authStore.authUser()
 })
 const firstName = computed(() => authStore?.firstName)
 </script>
-
 
 <style scoped></style>
