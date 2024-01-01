@@ -5,21 +5,12 @@
         {{ route.name }}
       </RouterLink>
     </div>
-    <div>{{ firstName }}</div>
+    <div>{{ name }}</div>
   </nav>
 </template>
 
 <script setup>
-import { ref, computed, onBeforeMount } from 'vue'
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '@/stores/authStore'
-const router = useRouter()
-const routes = ref(router.getRoutes())
-const authStore = useAuthStore()
-onBeforeMount(() => {
-  authStore.authUser()
-})
-const firstName = computed(() => authStore?.firstName)
+defineProps({ name: { type: String, required: true }, routes: { type: Array, required: true } })
 </script>
 
 <style scoped></style>
