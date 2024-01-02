@@ -1,3 +1,4 @@
+import { authGuard } from '@auth0/auth0-vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Home = () => import('../views/HomeView.vue')
@@ -14,7 +15,8 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      beforeEnter: authGuard
     }
   ]
 })
