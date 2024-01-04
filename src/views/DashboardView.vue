@@ -29,7 +29,6 @@ import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 
 const todo = ref(undefined)
-
 const todoStore = useTodoStore()
 const { todos } = storeToRefs(todoStore)
 const { addTodo } = todoStore

@@ -32,7 +32,7 @@
 defineProps({
   routes: { type: Array, required: true },
   actions: { type: Array, required: true },
-  user: { type: Object, required: true }
+  user: { type: Object, required: false, default: undefined }
 })
 </script>
 

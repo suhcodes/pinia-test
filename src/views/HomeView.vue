@@ -7,6 +7,11 @@
       iusto, pariatur fuga eum quod odit sed velit nostrum earum commodi.
     </p>
   </div>
+  <DSurvey />
 </template>
+
+<script setup>
+import DSurvey from '@/components/DSurvey.vue'
+</script>
 
 <style scoped></style>
