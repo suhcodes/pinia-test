@@ -13,6 +13,7 @@ export const useAuthStore = defineStore('AuthStore', () => {
 
   const authUser = ref(user)
   const isAuthUser = ref(isAuthenticated)
+  const token = ref(undefined)
 
   const handleLogin = () => {
     loginWithRedirect({
@@ -40,12 +41,18 @@ export const useAuthStore = defineStore('AuthStore', () => {
       }
     })
   }
+
+  ;(async function () {
+    token.value = await getAccessTokenSilently()
+  })()
+
   return {
     authUser,
     handleLogin,
     handleLogout,
     isAuthUser,
     handleSignUp,
-    getAccessTokenSilently
+    getAccessTokenSilently,
+    token
   }
 })

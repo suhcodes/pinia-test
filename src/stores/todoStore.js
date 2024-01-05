@@ -9,7 +9,7 @@ export const useTodoStore = defineStore('ToDoStore', () => {
     todos.value.push(todo)
   }
 
-  ;(async function init() {
+  ;(async function () {
     await addTodo('My 1st task')
   })()
 
