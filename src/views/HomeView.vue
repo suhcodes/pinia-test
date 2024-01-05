@@ -7,11 +7,16 @@
       iusto, pariatur fuga eum quod odit sed velit nostrum earum commodi.
     </p>
   </div>
-  <DSurvey />
+  <DSurvey v-if="isAuthUser" />
 </template>
 
 <script setup>
 import DSurvey from '@/components/DSurvey.vue'
+import { useAuthStore } from '@/stores/authStore'
+import { storeToRefs } from 'pinia'
+
+const authStore = useAuthStore()
+const { isAuthUser } = storeToRefs(authStore)
 </script>
 
 <style scoped></style>
